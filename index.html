@@ -3,151 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Study Survey</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-image: url('https://i.imgur.com/4Z8m7wK.gif');
+            background-image: url('1771038446215.png');
             background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: #d63384;
-            padding: 50px;
-            line-height: 1.6;
-            position: relative;
-            min-height: 100vh;
-            overflow-x: hidden;
         }
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 230, 230, 0.7);
-            z-index: 0;
-        }
-        h1 {
-            font-size: 2em;
-            background-color: rgba(255, 255, 255, 0.8);
-            display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        p {
-            font-size: 1.2em;
-            margin: 20px 0;
-            background-color: rgba(255, 255, 255, 0.8);
-            display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        .buttons {
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
-        }
-        button {
-            font-size: 1.2em;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        #yes {
-            background-color: #ff69b4;
-            color: white;
-        }
-        #yes:hover {
-            background-color: #ff1493;
-            transform: scale(1.05);
-        }
-        #no {
-            background-color: #ccc;
-            color: #666;
-        }
-        #no:hover {
-            background-color: #999;
-        }
-        #message {
-            margin-top: 20px;
-            font-size: 1.5em;
-            display: none;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        .cat-gifs {
-            position: fixed;
-            width: 100px;
-            height: 100px;
-            z-index: 2;
-        }
-        .cat-gifs:nth-child(1) {
-            top: 10%;
-            left: 10%;
-        }
-        .cat-gifs:nth-child(2) {
-            top: 20%;
-            right: 10%;
-        }
-        .cat-gifs:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
+        .text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            color: white;  /* Adjust contrast here */
+            text-outline: 1px black; /* CSS for text outline - might need to use webkit or other properties */
         }
     </style>
 </head>
 <body>
-    <img src="https://media.giphy.com/media/3o7TKz9bX9Z8LxJL8w/giphy.gif" alt="Cute cat" class="cat-gifs">
-    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute cat" class="cat-gifs">
-    <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" alt="Cute cat" class="cat-gifs">
-
-    <h1>Welcome to our survey...</h1>
-    <p><strong>Title of the study: Will you be my Valentines?</strong></p>
-    <p>Does this look calm, 'cause I don't know how to say this....😵‍💫</p>
-    <p>You know, I've been enjoying our time talking, playing, having you as my art muse... except the money part lol.</p>
-    <p>I hope you enjoyed it as much as I did.</p>
-    <p>Will you be my Valentines? 👉🏼👈🏼</p>
-    <div class="buttons">
-        <button id="yes">Yes!</button>
-        <button id="no">No</button>
-    </div>
-    <div id="message"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script>
-        const yesBtn = document.getElementById('yes');
-        const noBtn = document.getElementById('no');
-        const message = document.getElementById('message');
-
-        yesBtn.addEventListener('click', () => {
-            message.textContent = "Yay! Happy Valentine's Day, Kyle! 🎉 You're the best boi ever! 💖";
-            message.style.display = 'block';
-            noBtn.style.display = 'none';
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        });
-
-        noBtn.addEventListener('mouseover', () => {
-            const x = Math.random() * (window.innerWidth - 100);
-            const y = Math.random() * (window.innerHeight - 100);
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
-            noBtn.style.position = 'fixed';
-        });
-    </script>
+    <h1 class="text">Welcome to the Study Survey!</h1>
+    <p class="text">Please take a moment to fill out the survey below.</p>
+    <!-- Removed cat GIF images -->
+    <!-- Removed cat-gifs CSS -->
+    <!-- Add rest of your content here -->
 </body>
 </html>
