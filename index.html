@@ -1,1 +1,151 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Survey</title>\n    <style>\n        body {\n            background-image: url('1771038446215.png');\n            background-size: cover;\n            color: black;\n            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);\n        }\n        h1 {\n            font-size: 2.5em;\n            text-align: center;\n        }\n        .survey-container {\n            background-color: white;\n            border: 2px solid darkgray;\n            padding: 20px;\n            margin: auto;\n            width: 50%;\n            box-shadow: 0 0 10px rgba(0,0,0,0.5);\n        }\n        button {\n            background-color: white;\n            border: 2px solid darkgray;\n            color: black;\n            padding: 10px 20px;\n            margin: 10px;\n            font-size: 1.2em;\n            cursor: pointer;\n            text-shadow: none;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"survey-container\">\n        <h1>Welcome to our survey...</h1>\n        <p>Please share your thoughts on Valentine's Day:</p>\n        <button onclick=\"alert('You clicked Yes');\">Yes</button>\n        <button onclick=\"alert('You clicked No');\">No</button>\n    </div>\n    <script>\n        // Confetti script goes here\n        function startConfetti() {\n            // Confetti logic\n        }\n        startConfetti();\n    </script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+
+      /* ✅ Local background image (GitHub Pages-friendly) */
+      background-image: url("1771038446215.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+
+      color: #d63384;
+      padding: 50px;
+      line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* Soft overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-color: rgba(255, 230, 230, 0.7);
+      z-index: 0;
+    }
+
+    /* Keep content above overlay */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2em;
+      background-color: rgba(255, 255, 255, 0.85);
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 0 0 16px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 14px 0;
+      background-color: rgba(255, 255, 255, 0.85);
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 12px;
+    }
+
+    .buttons {
+      margin-top: 28px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 10px 22px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    #no {
+      background-color: #e0e0e0;
+      color: #555;
+      position: relative;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.5em;
+      display: none;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 18px 16px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h1>Welcome to our survey...</h1>
+
+    <p><strong>Title of the study: Will you be my Valentine?</strong></p>
+    <p>Does this look calm, ’cause I don’t know how to say this... 😵‍💫</p>
+    <p>You know, I’ve been enjoying our time talking, playing, having you as my art muse... except the money part lol.</p>
+    <p>I hope you enjoyed it as much as I did.</p>
+    <p>Will you be my Valentine? 👉🏼👈🏼</p>
+
+    <div class="buttons">
+      <button id="yes" type="button">Yes!</button>
+      <button id="no" type="button">No</button>
+    </div>
+
+    <div id="message"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const message = document.getElementById("message");
+
+    yesBtn.addEventListener("click", () => {
+      message.textContent = "Yay! Happy Valentine’s Day, Kyle! 🎉 You’re the best boi ever! 💖";
+      message.style.display = "block";
+      noBtn.style.display = "none";
+
+      confetti({
+        particleCount: 120,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    });
+
+    noBtn.addEventListener("mouseover", () => {
+      // Move the no button to a random position (keep it inside the screen)
+      const btnW = noBtn.offsetWidth;
+      const btnH = noBtn.offsetHeight;
+
+      const maxX = Math.max(0, window.innerWidth - btnW - 20);
+      const maxY = Math.max(0, window.innerHeight - btnH - 20);
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.position = "fixed";
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
